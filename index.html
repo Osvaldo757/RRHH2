@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0107)file:///D:/Users/osmora/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/TUQ8WQ49/Indicadores.html -->
+<!-- saved from url=(0263)file:///X:/Inteligencia%20de%20Negocios/Analisis%20de%20Datos/02.%20Proyectos%20Institucionales/PROY26.%20Apoyo%20anal%C3%ADtico%20a%20Talento%20Humano/Versi%C3%B3n%202025/Banco%20Promerica%20%C2%B7%20Informe%20Ejecutivo%20RRHH%20%E2%80%94%20Versi%C3%B3n%203.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,28 +61,7 @@
         }
 
         .nav-horizontal {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding: 10px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .nav-horizontal a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-
-        .nav-horizontal a:hover,
-        .nav-horizontal a.active {
-            background-color: var(--accent-green-light);
-            color: var(--bg-promerica);
+            display: none; /* Ocultar la barra de navegación */
         }
 
         .section {
@@ -150,7 +129,6 @@
             text-transform: uppercase;
         }
 
-        /* Tooltip */
         .tooltip-container {
             position: relative;
             display: inline-block;
@@ -163,57 +141,56 @@
             font-size: 12px;
             font-weight: 900;
         }
-
+        
         .tooltip-text {
             visibility: hidden;
-            background-color: var(--accent-green-light);
-            color: var(--bg-promerica);
-            text-align: left; /* Alineación del texto del tooltip */
+            background-color: #004b2a;
+            color: var(--accent-green-light);
+            text-align: left;
             border-radius: 6px;
-            padding: 10px 15px; /* Más padding para mayor área */
+            padding: 8px 12px;
             position: absolute;
             z-index: 10;
-            top: 125%; /* Posiciona el tooltip debajo del ícono */
-            left: 50%;
-            transform: translateX(-50%);
             white-space: normal;
-            max-width: 300px; /* Ancho máximo aumentado */
+            max-width: 250px;
             opacity: 0;
             transition: opacity 0.3s;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            font-size: 12px;
         }
 
         .tooltip-text::after {
             content: "";
             position: absolute;
-            bottom: 100%; /* El triángulo apunta hacia arriba */
             left: 50%;
             transform: translateX(-50%);
             border-width: 5px;
             border-style: solid;
-            border-color: transparent transparent var(--accent-green-light) transparent;
         }
 
+        .tooltip-up {
+            bottom: 125%;
+        }
+
+        .tooltip-up::after {
+            top: 100%;
+            border-color: #004b2a transparent transparent transparent;
+        }
+
+        .tooltip-down {
+            top: 125%;
+        }
+        
+        .tooltip-down::after {
+            bottom: 100%;
+            border-color: transparent transparent #004b2a transparent;
+        }
+        
         .tooltip-container:hover .tooltip-text {
             visibility: visible;
             opacity: 1;
         }
-        
-        /* Responsive tooltip para móviles */
-        @media (max-width: 500px) {
-            .tooltip-text {
-                left: 0;
-                transform: translateX(0);
-                right: auto;
-                width: 100%;
-                max-width: none;
-            }
-            .tooltip-text::after {
-                left: 10%;
-                transform: translateX(-10%);
-            }
-        }
-        
+
         .flow-diagram-container {
             margin-top: 30px;
             padding: 24px;
@@ -387,7 +364,7 @@
         <nav class="nav-horizontal">
             <a href="file:///D:/Users/osmora/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/TUQ8WQ49/Indicadores.html#resumen" class="">Resumen Ejecutivo</a>
             <a href="file:///D:/Users/osmora/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/TUQ8WQ49/Indicadores.html#estabilidad" class="">Estabilidad y Retención</a>
-            <a href="file:///D:/Users/osmora/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/TUQ8WQ49/Indicadores.html#atraccion" class="active">Atracción y Reclutamiento</a>
+            <a href="file:///D:/Users/osmora/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/TUQ8WQ49/Indicadores.html#atraccion" class="">Atracción y Reclutamiento</a>
             <a href="file:///D:/Users/osmora/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/TUQ8WQ49/Indicadores.html#eficiencia" class="">Costo y Eficiencia</a>
             <a href="file:///D:/Users/osmora/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/TUQ8WQ49/Indicadores.html#conclusiones" class="">Conclusiones</a>
         </nav>
@@ -404,7 +381,7 @@
                 <div class="label">Rotación Total
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Salidas totales / dotación promedio del período. Incluye voluntarias e involuntarias.</span>
+                        <span class="tooltip-text" data-tooltip-up="Salidas totales / dotación promedio del período. Incluye voluntarias e involuntarias.">Salidas totales / dotación promedio del período. Incluye voluntarias e involuntarias.</span>
                     </span>
                 </div>
             </div>
@@ -413,7 +390,7 @@
                 <div class="label">Permanencia (Años)
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Años promedio de antigüedad (tenure). Promedio de la diferencia entre fecha actual y fecha de ingreso.</span>
+                        <span class="tooltip-text" data-tooltip-up="Años promedio de antigüedad (tenure). Promedio de la diferencia entre fecha actual y fecha de ingreso.">Años promedio de antigüedad (tenure). Promedio de la diferencia entre fecha actual y fecha de ingreso.</span>
                     </span>
                 </div>
             </div>
@@ -422,7 +399,7 @@
                 <div class="label">Crecimiento Neto
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Variación neta de la plantilla respecto al mismo periodo del año anterior.</span>
+                        <span class="tooltip-text" data-tooltip-up="Variación neta de la plantilla respecto al mismo periodo del año anterior.">Variación neta de la plantilla respecto al mismo periodo del año anterior.</span>
                     </span>
                 </div>
             </div>
@@ -482,7 +459,7 @@
                 <div class="label">Tasa de Contratación
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Número de ingresos del periodo / dotación promedio.</span>
+                        <span class="tooltip-text" data-tooltip-up="Número de ingresos del periodo / dotación promedio.">Número de ingresos del periodo / dotación promedio.</span>
                     </span>
                 </div>
             </div>
@@ -491,7 +468,7 @@
                 <div class="label">Tiempo de Contratación
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Días promedio desde que se publica la vacante hasta la contratación.</span>
+                        <span class="tooltip-text" data-tooltip-up="Días promedio desde que se publica la vacante hasta la contratación.">Días promedio desde que se publica la vacante hasta la contratación.</span>
                     </span>
                 </div>
             </div>
@@ -509,7 +486,7 @@
                 <div class="label">Costo de Nómina/Empleado
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Costo total de la nómina dividido por el número de empleados.</span>
+                        <span class="tooltip-text" data-tooltip-up="Costo total de la nómina dividido por el número de empleados.">Costo total de la nómina dividido por el número de empleados.</span>
                     </span>
                 </div>
             </div>
@@ -518,7 +495,7 @@
                 <div class="label">Variación Salarial A/A
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Cambio porcentual en el gasto salarial respecto al año anterior.</span>
+                        <span class="tooltip-text" data-tooltip-up="Cambio porcentual en el gasto salarial respecto al año anterior.">Cambio porcentual en el gasto salarial respecto al año anterior.</span>
                     </span>
                 </div>
             </div>
@@ -527,7 +504,7 @@
                 <div class="label">Composición F/M
                     <span class="tooltip-container">
                         <span class="tooltip-icon">ⓘ</span>
-                        <span class="tooltip-text">Distribución porcentual de mujeres y hombres en la plantilla.</span>
+                        <span class="tooltip-text" data-tooltip-up="Distribución porcentual de mujeres y hombres en la plantilla.">Distribución porcentual de mujeres y hombres en la plantilla.</span>
                     </span>
                 </div>
             </div>
@@ -602,6 +579,31 @@
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
                 targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.querySelectorAll('.tooltip-container').forEach(container => {
+            const tooltip = container.querySelector('.tooltip-text');
+            const tooltipContent = tooltip.getAttribute('data-tooltip-up');
+            tooltip.textContent = tooltipContent;
+
+            container.addEventListener('mouseenter', () => {
+                const rect = container.getBoundingClientRect();
+                const tooltipRect = tooltip.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                const spaceBelow = windowHeight - rect.bottom;
+                const spaceAbove = rect.top;
+
+                if (spaceBelow < tooltipRect.height + 20 && spaceAbove > tooltipRect.height + 20) {
+                    // Hay más espacio arriba, lo despliega arriba
+                    tooltip.classList.remove('tooltip-down');
+                    tooltip.classList.add('tooltip-up');
+                } else {
+                    // Por defecto o si hay más espacio abajo, lo despliega abajo
+                    tooltip.classList.remove('tooltip-up');
+                    tooltip.classList.add('tooltip-down');
+                }
             });
         });
     });
